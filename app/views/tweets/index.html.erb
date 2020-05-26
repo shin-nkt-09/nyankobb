@@ -1,0 +1,48 @@
+ <div class="main-wrapper">
+    <div class="side">
+      <ul class="side-box">
+        <% if user_signed_in? %>
+          <li class="side-box__list"> <%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+          <li class="side-box__list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+       <i class="fas fa-paper-plane"></i>   <li class="side-box__list"><%= link_to "新規投稿", "/tweets/new", class: "post"%></li>
+        <% else %>
+          <li class="side-box__list"><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+          <li class="side-box__list"><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+        <% end %>
+          <li class="side-box__list"><%= link_to "投稿一覧", "/", class: "post" %></li>
+          <li class="side-box__list">Nyankoスタンプ</li>
+          <li class="side-box__list">Nyankoグッズ</li>
+          <li class="side-box__list">飼育マニュアル</li>
+          <li class="side-box__list">里親募集</li>
+          <li class="side-box__list">お悩み相談</li>
+          <li class="side-box__list">お問い合わせ</li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="contents">
+        <% @tweets.each do |tweet| %>
+        <div class="contents__box" style="background-image: url(<%= tweet.image %>);">
+      <div class="menu">
+       <i class="fas fa-align-right fa-2x" style="color: pink;"></i>
+          <ul class="menu-list">
+          <li>
+            <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get %>
+          </li>
+          <li>
+          <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get %>
+          </li>
+          <li>
+            <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
+          </li>
+          
+          </div>
+          <%= simple_format(tweet.text) %>
+          <span class="name">
+          <%= tweet.name %>
+          </span>
+         </div>
+         <% end %>
+      </div>
+    </div>
+  </div>

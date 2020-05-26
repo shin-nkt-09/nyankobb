@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+.header{
+  font-family: 'YuMincho';
+  height:70px;
+  width:100%;
+  background-color: white;
+  display:flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  position:relative;
+  &__box{
+    font-size:30px;
+    line-height:70px;
+    margin:0 auto;
+  }
+ }
+ .main-wrapper{
+   display:flex;
+
+ .side{
+  height:calc(100vh - 120px);
+  width:250px;
+  background-color: white;
+  .side-box__list{
+    margin:40px 0 40px 40px;
+  }
+}
+
+.main{
+  display:flex;
+  height:100vh;
+  width:100%;
+  overflow: scroll;
+  background-color: white;
+  background-image: url("40283.jpg");
+  background-position: center;
+  background-size: cover;
+ .contents{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 660px;
+   &__box{
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    height: 650px;
+    color: #fff;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 3px;
+    position:relative;
+    .fas{
+      color:black;
+      position:absolute;
+      right:20px;
+      top:20px;
+    }
+     p{
+       color:black;
+     }
+     .name {
+       color:black
+     }
+   }
+ }
+}
+}
+
+.footer{
+  width:100%;
+  background-color: white;
+  height:50px;
+  line-height:50px;
+  p{
+    text-align:center;
+  }
+}
+
+.main::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nyankobb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
+    
+  </head>
+
+  <body>
+  <div class="wrapper">
+   <div class="header">
+    <div class="header__box"><%= link_to "NyankoBB", "/" %></div>
+  </div>
+    <%= yield %>
+      <div class="footer">
+      <p>copy-right NyankoBB2020</p>
+  </div>
+</div>
+  </body>
+</html>

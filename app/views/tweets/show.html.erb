@@ -1,0 +1,42 @@
+
+  <div class="main">
+    <div class="contents">
+      <div class="contents__box" style="background-image: url(<%= @tweet.image %>);">
+        <div class="menu">
+          <i class="fas fa-align-right fa-2x" style="color: pink;"></i>
+          <ul class="menu-list">
+            <li>
+              <%= link_to "編集", "/tweets/#{@tweet.id}/edit" %>
+            </li>
+            <li>
+              <%= link_to "削除", "/tweets/#{@tweet.id}", method: :delete %>
+            </li>
+        </div>
+          <%= simple_format(@tweet.text) %>
+            <span class="name">
+              <%= @tweet.name %>
+            </span>
+      </div>
+       <div class="container">
+    <% if current_user %>
+      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+      <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+    </div>
+  </div>
