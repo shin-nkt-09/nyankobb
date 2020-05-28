@@ -2,8 +2,12 @@
   <div class="main">
     <div class="contents">
       <div class="contents__box" style="background-image: url(<%= @tweet.image %>);">
+           <div class="mybox">
+       <span class="name">
+              <%= @tweet.name %>
+            </span>
         <div class="menu">
-          <i class="fas fa-align-right fa-2x" style="color: pink;"></i>
+          <%# <i class="fas fa-align-right fa-2x" style="color: pink;"></i> %>
           <ul class="menu-list">
             <li>
               <%= link_to "編集", "/tweets/#{@tweet.id}/edit" %>
@@ -12,10 +16,10 @@
               <%= link_to "削除", "/tweets/#{@tweet.id}", method: :delete %>
             </li>
         </div>
+            </div> 
+              <div class="tweeet">
           <%= simple_format(@tweet.text) %>
-            <span class="name">
-              <%= @tweet.name %>
-            </span>
+            </div>
       </div>
        <div class="container">
     <% if current_user %>
@@ -27,7 +31,7 @@
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
       <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h4><コメント一覧></h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
           <p>
