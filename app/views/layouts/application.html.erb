@@ -8,16 +8,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
  
-    
   </head>
 
   <body>
   <div class="wrapper">
-   <div class="header">
-    <div class="header__box"><%= link_to "NyankoBB", "/" %></div>
+ <div class="header">
+    <div class="header__left"><%= link_to "NyankoBB ", "/" %><i class="fas fa-paw fa-xs fa-spin"style="color: pink;"></i></div>
+    <div class="header__right">
+      <ul class="side-box">
+      <% if user_signed_in? %>
+        <li class="side-box__list"><i class="fas fa-paper-plane"></i><%= link_to "新規投稿", "/tweets/new", class: "post"%></li>
+        <li class="side-box__list"><i class="fas fa-sign-out-alt"></i><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li class="side-box__list"><i class="fas fa-cat"></i><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+      <% else %>
+        <li class="side-box__list"><i class="fas fa-sign-in-alt"></i><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
+        <li class="side-box__list"><i class="fas fa-user-plus"></i><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
+      <% end %>
+        <li class="side-box__list"><i class="fas fa-indent"></i><%= link_to "投稿一覧", "/", class: "post" %></li>
+      </ul>
+    </div>
   </div>
     <%= yield %>
-      <div class="footer">
+    <div class="footer">
       <p>copy-right NyankoBB2020</p>
   </div>
 </div>
