@@ -4,16 +4,17 @@
     <title>Nyankobb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
- 
   </head>
-
   <body>
   <div class="wrapper">
- <div class="header">
-    <div class="header__left"><%= link_to "NyankoBB ", "/" %><i class="fas fa-paw fa-xs fa-spin"style="color: pink;"></i></div>
+    <div class="header">
+      <div class="header__left">
+        <%= link_to "NyankoBB ", "/" %>
+        <i class="fas fa-paw fa-xs fa-spin"style="color: pink;"></i>
+    </div>
+    
     <div class="header__right">
       <ul class="side-box">
       <% if user_signed_in? %>
