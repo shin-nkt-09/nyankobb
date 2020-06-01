@@ -1,32 +1,12 @@
-
-  <div class="main">
+<div class="main">
+  <%= form_with(url: tweets_searches_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "search", class: "search-input" %>
+  <%= form.submit "send", class: "search-btn" %>
+<% end %>
     <div class="contents">
       <% @tweets.each do |tweet| %>
-        <div class="contents__box" style="background-image: url(<%= tweet.image %>);">
-            <div class="mybox">
-            <div class="name">
-        <%= tweet.name %>
-          </div>
-          <div class="menu">
-         
-              <ul class="menu-list">
-                <li>
-                <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get %>
-                </li>
-                <li>
-                  <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get %>
-                </li>
-                <li>
-                  <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
-                </li>
-              </ul>
-        </div>
-        </div>
-        <div class="tweeet">
-        <%= simple_format(tweet.text) %>
-        </div>
-     
-      </div>
+       <%= render partial: "tweet", locals: { tweet: tweet } %>
+       
       <% end %>
     </div>
   </div>

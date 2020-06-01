@@ -1,0 +1,26 @@
+ 
+<div class="contents__box" style="background-image: url(<%= tweet.image %>);">
+            <div class="mybox">
+            <div class="name">
+        <%= tweet.name %>
+          </div>
+          <div class="menu">
+         
+              <ul class="menu-list">
+                <li>
+                <%= link_to "詳細", "/tweets/#{tweet.id}", method: :get %>
+                </li>
+                <li>
+                  <%= link_to "編集", "/tweets/#{tweet.id}/edit", method: :get %>
+                </li>
+                <li>
+                  <%= link_to "削除", "/tweets/#{tweet.id}", method: :delete %>
+                </li>
+              </ul>
+        </div>
+        </div>
+        <div class="tweeet">
+        <%= simple_format(tweet.text) %>
+        </div>
+     
+      </div>

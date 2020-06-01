@@ -59,6 +59,12 @@
   // background-image: url("40283.jpg");
   background-position: center;
   background-size: cover;
+  .search-form{
+    position:absolute;
+    top:25px;
+    left:400px;
+  }
+  
  .contents{
   width: 600px;
   margin:100px auto 0px auto;
@@ -107,7 +113,6 @@
       .menu {
         height: 17px;
     .menu-list {
-      display:flex;
         a{
           font-size: 12px;
         }
