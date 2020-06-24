@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Nyankobb
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      .header
+        .header__left
+          = link_to "NyankoBB ", "/"
+          %i.fas.fa-paw.fa-xs.fa-spin{:style => "color: pink;"}
+        .header__right
+          %ul.side-box
+            - if user_signed_in?
+              %li.side-box__list
+                %i.fas.fa-paper-plane
+                = link_to "新規投稿", "/tweets/new", class: "post"
+              %li.side-box__list
+                %i.fas.fa-sign-out-alt
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+              %li.side-box__list
+                %i.fas.fa-cat
+                = link_to "マイページ", "/users/#{current_user.id}"
+            - else
+              %li.side-box__list
+                %i.fas.fa-sign-in-alt
+                = link_to "ログイン", new_user_session_path, class: 'post'
+              %li.side-box__list
+                %i.fas.fa-user-plus
+                = link_to "新規登録", new_user_registration_path, class: 'post'
+            %li.side-box__list
+              %i.fas.fa-indent
+              = link_to "投稿一覧", "/", class: "post"
+      = yield
+      .footer
+        %p copy-right NyankoBB2020

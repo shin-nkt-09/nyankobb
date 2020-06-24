@@ -1,0 +1,14 @@
+.contents__box{:style => "background-image: url(#{tweet.image});"}
+  .mybox
+    .name
+      = tweet.user.nickname
+    .menu
+      %ul.menu-list
+        %li
+          = link_to "詳細", "/tweets/#{tweet.id}", method: :get
+        %li
+          = link_to "編集", "/tweets/#{tweet.id}/edit", method: :get
+        %li
+          = link_to "削除", "/tweets/#{tweet.id}", method: :delete
+  .tweeet
+    = simple_format(tweet.text)

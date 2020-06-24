@@ -1,0 +1,12 @@
+.main
+  .contents
+    %p
+      = @nickname
+      さんの投稿一覧
+    - @tweets.each do |tweet|
+      .contents__box{:style => "background-image: url(#{tweet.image});"}
+        .mybox
+          %span.name
+            = tweet.name
+        .tweeet
+          = simple_format(tweet.text)
