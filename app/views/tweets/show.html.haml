@@ -1,34 +1,31 @@
 .main
   .contents
-    .contents__box{:style => "background-image: url("}
-    = @tweet.image
-    );"&gt;
-    .mybox
-      %span.name
-        = @tweet.name
-      .menu
-        %ul.menu-list
-          %li
-            = link_to 編集, /tweets/#{@tweet.id}/edit
-          %li
-            = link_to 削除, /tweets/#{@tweet.id}, method: :delete
+    .contents__box{style: "background-image: url(#{@tweet.image});"}
+      .mybox
+        .name
+          = @tweet.user.nickname
+        .menu
+          %ul.menu-list
+            %li
+              = link_to "編集", edit_tweet_path(@tweet.id), class:"list-show"
+            %li
+              = link_to "削除", tweets_path(@tweet.id),class:"list-show", method: :delete
       .tweeet
         = simple_format(@tweet.text)
     .container
       - if current_user
         = form_with(model: [@tweet, @comment], local: true) do |form|
-          = form.text_area :text, placeholder: コメントする, rows: 2
-          = form.submit SEND
+          = form.text_area :text, placeholder: "コメントする", rows: 2
+          = form.submit "SEND"
       - else
         %strong
           %p &#x203B;&#x203B;&#x203B; &#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306E;&#x6295;&#x7A3F;&#x306B;&#x306F;&#x65B0;&#x898F;&#x767B;&#x9332;/&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059; &#x203B;&#x203B;&#x203B;
       .comments
         %h4
-          %コメント一覧
+          %p コメント一覧
           - if @comments
             - @comments.each do |comment|
               %p
                 %strong
-                  = link_to comment.user.nickname, /users/#{comment.user_id}
-                  \&#xFF1A;
+                  = link_to comment.user.nickname, user_path(comment.user_id)
                 = comment.text
