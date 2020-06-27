@@ -1,24 +1,53 @@
-# README
+## アプリケーション情報
+### アプリケーション概要
+- 猫専用SNSアプリを作成しました。
+- 接続先情報
+- URL :https://frozen-cliffs-96732.herokuapp.com/
+- ID/Pass
+- ID:
+- Pass: 
+### テスト用アカウント等
+- メールアドレス: 
+- パスワード:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発状況
+## 開発環境
+- Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code
+### 開発期間と平均作業時間
+- 開発期間：約2週間
+- 1日あたりの平均作業時間：約3時間
+### 開発体制
+- 人数：1名
 
-Things you may want to cover:
 
-* Ruby version
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
 
-* System dependencies
+### Association
+- has_many :tweets
+- has_many :comments
 
-* Configuration
+## tweetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null:false|
+|text|string|null:false|
+|image|text|null: false|
+|user_id|references|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belongs_to :user
+- has_many :comments
 
-* Database initialization
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|tweet_id|references|null: false, foreign_key: true|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :tweet
