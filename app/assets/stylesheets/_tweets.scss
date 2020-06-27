@@ -111,10 +111,18 @@
         font-size: 14px;
       }
       .menu {
-        height: 17px;
     .menu-list {
-        a{
-          font-size: 12px;
+        .link-edit{
+          font-size: 13px;
+          text-decoration: none;
+          padding-right:10px;
+          color:black;
+          position:absolute;
+          right:5px;
+          top:25px;
+        }
+        .list-show{
+          font-size: 13px;
         }
     }
     }

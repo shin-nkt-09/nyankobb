@@ -5,10 +5,6 @@
     .menu
       %ul.menu-list
         %li
-          = link_to "詳細", "/tweets/#{tweet.id}", method: :get
-        %li
-          = link_to "編集", "/tweets/#{tweet.id}/edit", method: :get
-        %li
-          = link_to "削除", "/tweets/#{tweet.id}", method: :delete
+          = link_to "詳細", "/tweets/#{tweet.id}", class:"link-edit", method: :get
   .tweeet
     = simple_format(tweet.text)
