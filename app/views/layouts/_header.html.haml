@@ -2,6 +2,9 @@
   .header
     .header__left
       = link_to "NyankoBB ", "/"
+      = form_with(url: tweets_searches_path, local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "search", class: "search-input"
+        = form.submit "send", class: "search-btn"
     .header__right
       %ul.side-box
         - if user_signed_in?

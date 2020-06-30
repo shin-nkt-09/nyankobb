@@ -19,6 +19,7 @@
     font-size:30px;
     line-height:70px;
     margin-left:40px;
+    display:flex;
     .menu-list li{
       margin-right:10px;
     }
@@ -56,13 +57,10 @@
   width:100%;
   overflow: scroll;
   background-color: white;
-  // background-image: url("bck0008-009.jpg");
   background-position: center;
   background-size: cover;
   .search-form{
-    position:absolute;
-    top:25px;
-    left:300px;
+
   }
   
  .contents{

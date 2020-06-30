@@ -1,8 +1,5 @@
 .main
   = render "layouts/header"
-  = form_with(url: tweets_searches_path, local: true, method: :get, class: "search-form") do |form|
-    = form.text_field :keyword, placeholder: "search", class: "search-input"
-    = form.submit "send", class: "search-btn"
   .contents
     - @tweets.each do |tweet|
       = render partial: "tweet", locals: { tweet: tweet }
