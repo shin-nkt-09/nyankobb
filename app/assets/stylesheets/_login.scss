@@ -12,11 +12,16 @@
     h2{
     text-align:center;
     margin:20px 0;
+    font-family: 'Kaushan Script', cursive;
+    font-size:30px;
   }
     .field{
       margin:0 auto;
       width:200px;
       padding-bottom:10px;
+      .form{
+        padding-left:5px;
+      }
     }
     .actions{
       margin:0 auto;
