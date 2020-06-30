@@ -1,4 +1,7 @@
 .main
+  = render "layouts/header"
+  .searches
+    %h2 - 検索結果 -
   .contents
     - @tweets.each do |tweet|
       = render partial: "tweets/tweet", locals: { tweet: tweet }
