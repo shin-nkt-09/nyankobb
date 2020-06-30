@@ -6,7 +6,6 @@
 }
 
 .header{
-  font-family: 'YuMincho';
   height:70px;
   width:100%;
   background-color: white;
@@ -16,17 +15,17 @@
   position: fixed;
   position:relative;
   &__left{
-    font-size:30px;
+    a{
+      font-size:30px;
+    }
+    font-family: 'Kaushan Script', cursive;
     line-height:70px;
     margin-left:40px;
-    display:flex;
-
     .menu-list li{
       margin-right:10px;
     }
     a{
       text-decoration: none;
-      font-family: 'YuMincho';
   }
   }
   &__right{
