@@ -20,7 +20,7 @@
     }
     font-family: 'Kaushan Script', cursive;
     line-height:70px;
-    margin-left:40px;
+    margin-left:70px;
     display:flex;
     .search-form{
       margin-left:30px;
@@ -40,6 +40,7 @@
   }
   }
   &__right{
+      margin-right:70px;
     .side-box{
       line-height:70px;
       display:flex;
