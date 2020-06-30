@@ -1,0 +1,45 @@
+.login{
+  height:100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  .new_user{
+    height:300px;
+    width:400px;
+    border: 0.1px solid pink;
+    border-radius: 2px;
+    h2{
+    text-align:center;
+    margin:20px 0;
+    font-family: 'Kaushan Script', cursive;
+    font-size:30px;
+  }
+    .field{
+      margin:0 auto;
+      width:200px;
+      padding-bottom:10px;
+      .form{
+        padding-left:5px;
+      }
+    }
+    .actions{
+      margin:0 auto;
+      width:200px;
+      .btn{
+      width:190px;
+      display: inline-block;
+      padding: 0.3em 1em;
+      text-decoration: none;
+      color: #67c5ff;
+      border: solid 2px #67c5ff;
+      border-radius: 3px;
+      transition: .4s;
+    }
+    .btn:hover{
+      background: #67c5ff;
+      color: white;
+    }
+    }
+  }
+}
