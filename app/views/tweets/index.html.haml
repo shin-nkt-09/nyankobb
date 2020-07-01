@@ -2,4 +2,20 @@
   = render "layouts/header"
   .contents
     - @tweets.each do |tweet|
-      = render partial: "tweet", locals: { tweet: tweet }
+      .contents_box
+        .name
+          = tweet.user.nickname
+          %ul.menu
+            %li.menu_btn 
+              %i.fas.fa-paw.fa-lg{style: "color: pink;"}
+              %ul.menu_btn_list
+                %li
+                  = link_to "詳細", tweet_path(tweet.id), class:"link-edit link-btn", method: :get
+                %li
+                  = link_to "編集", edit_tweet_path(tweet.id), class:"list-show link-btn"
+                %li
+                  = link_to "削除", tweet_path(tweet.id),class:"list-show link-btn", method: :delete
+        .contents_box_image{:style => "background-image: url(#{tweet.image});"}
+        .tweeet
+          = simple_format(tweet.text)
+          
