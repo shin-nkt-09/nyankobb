@@ -97,15 +97,18 @@
         }
         .menu_btn_list {
           display:none;
+          text-align:center;
           .link-btn{
             text-decoration: none;
-            font-size:15px;
+            font-size:13px;
+            color:black;
+            padding:10px;
           }
         }
         li.menu_btn ul.menu_btn_list {
           position: absolute;
           top: 45px;
-          right:1px;
+          right:2px;
           width: 100%;
           background:white;
           -webkit-transition: all .2s ease;
