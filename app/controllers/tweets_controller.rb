@@ -13,11 +13,7 @@ class TweetsController < ApplicationController
   
   def create
     Tweet.create(tweet_params)
-  end
-
-  def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy
+    redirect_to root_path
   end
 
   def edit
@@ -35,6 +31,12 @@ class TweetsController < ApplicationController
 
   def search
     @tweets = Tweet.search(params[:keyword])
+  end
+
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    @tweet.destroy
+    redirect_to root_path
   end
 
   private

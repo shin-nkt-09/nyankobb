@@ -6,7 +6,6 @@
 }
 
 .header{
-  font-family: 'YuMincho';
   height:70px;
   width:100%;
   background-color: white;
@@ -16,30 +15,38 @@
   position: fixed;
   position:relative;
   &__left{
-    font-size:30px;
+    a{
+      font-size:30px;
+    }
+    font-family: 'Kaushan Script', cursive;
     line-height:70px;
-    margin-left:40px;
+    margin-left:70px;
+    display:flex;
+    .search-form{
+      margin-left:30px;
+     .search-input{
+      font-size:15px;
+      padding-left:5px;
+     }
+     .search-btn{
+      font-size:15px;
+     }
+    }
     .menu-list li{
       margin-right:10px;
     }
     a{
       text-decoration: none;
-      font-family: 'YuMincho';
-    .fas{
-      padding-left:10px;
-    }
   }
   }
   &__right{
+      margin-right:70px;
     .side-box{
       line-height:70px;
       display:flex;
     &__list{
       padding-right:10px;
       margin-right:10px;
-      .fas{
-        padding-right:5px;
-      }
       a{
         text-decoration: none;
         color:black;
@@ -56,96 +63,70 @@
   width:100%;
   overflow: scroll;
   background-color: white;
-  // background-image: url("bck0008-009.jpg");
   background-position: center;
   background-size: cover;
-  .search-form{
-    position:absolute;
-    top:25px;
-    left:300px;
-  }
   
  .contents{
-  width: 600px;
+  width: 500px;
   margin:100px auto 0px auto;
   max-width: 660px;
-  position:relative;
-   &__box{
-    margin: 20px 0;
-    padding: 50px;
-    position: relative;
-    display:flex;
-    height: 600px;
-    color: #fff;
+   &_box{
+    border:1px solid pink;
+    height: 450px;
+    margin-bottom: 50px;
+    &_image{
     background-size: cover;
     background-position: center center;
-    border-radius: 3px;
-    position:relative;
-    margin-bottom:150px;
-   
-    .fas{
-      position:absolute;
-      right:20px;
-      top:20px;
-    }
+    height: 350px;
+  }
      p{
        color:black;
      }
-     .mybox{
-      position:absolute;
-      justify-content: space-between;
-      top:-50px;
-      left:0px;
-      display:flex;
-      height:60px;
-      width:100%;
-      background-color:white;
-      border-radius: 2px;
-      border: 1px solid rgb(219, 214, 214);
-      -webkit-box-shadow: 0 1px 0 #C1D6EC;
-      -moz-box-shadow: 0 1px 0 #C1D6EC;
-      box-shadow: 0 1px 0 #C1D6EC;
       .name {
-        color:black;
-        padding:20px 0 0 15px;
-        font-size: 14px;
-      }
-      .menu {
-    .menu-list {
-        .link-edit{
-          font-size: 13px;
-          text-decoration: none;
-          padding-right:10px;
-          color:black;
-          position:absolute;
-          right:5px;
-          top:25px;
+        height:50px;
+        padding:10px 0 0 10px;
+        display:flex;
+        justify-content: space-between;
+        .menu > li.menu_btn{
+          position: relative;
+          width: 50px;
+          padding:5px 0 0 10px;
         }
-        .list-show{
-          font-size: 13px;
+        .fa-paw{
+          margin:0 auto;
         }
+        .menu_btn_list {
+          display:none;
+          .link-btn{
+            text-decoration: none;
+            font-size:15px;
+          }
+        }
+        li.menu_btn ul.menu_btn_list {
+          position: absolute;
+          top: 45px;
+          right:1px;
+          width: 100%;
+          background:white;
+          -webkit-transition: all .2s ease;
+          transition: all .2s ease;
+        }
+      li.menu_btn:hover .menu_btn_list{
+        top: 25px;
+        visibility: visible;
+        opacity: 1;
+        display:block;
     }
+      }
+    .tweeet{
+      width:100%;
+      height:50px;
+      padding:5px 0 0 10px;
     }
      }
-     
-     .tweeet{
-      width:100%;
-      height:70px;
-      font-size: 14px;
-      background-color: #fff;
-      position:absolute;
-      bottom:-50px;
-      left:0px;
-      border-radius: 2px;
-      border: 0.1px solid rgb(219, 214, 214);
-      -webkit-box-shadow: 0 1px 0 #C1D6EC;
-      -moz-box-shadow: 0 1px 0 #C1D6EC;
-      box-shadow: 0 1px 0 #C1D6EC;
-      padding:10px 10px;
-    }
    }
  }
-}
+
 
 
 .footer{
@@ -160,5 +141,12 @@
 
 .main::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   display:none;
+}
+
+.searches{
+  height:100px;
+  line-height:100px;
+  text-align: center;
+  font-size:20px;
 }
 
