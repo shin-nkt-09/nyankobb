@@ -84,6 +84,12 @@
   width: 500px;
   margin:100px auto 0px auto;
   max-width: 660px;
+  h2{
+    height:50px;
+    text-align: center;
+    font-size:20px;
+    
+  }
   .mytweet{
     text-align:center;
     height:50px;
@@ -163,11 +169,3 @@
 .main::-webkit-scrollbar {  /* Chrome, Safari 対応 */
   display:none;
 }
-
-.searches{
-  height:100px;
-  line-height:100px;
-  text-align: center;
-  font-size:20px;
-}
-
