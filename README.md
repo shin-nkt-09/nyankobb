@@ -2,7 +2,7 @@
 ### アプリケーション概要
 - 猫専用SNSアプリを作成しました。
 - 接続先情報
-- URL :https://frozen-cliffs-96732.herokuapp.com/
+- URL :https://nyankobb.herokuapp.com/
 
 ### 確認用アカウント
 - メールアドレス: test@test
