@@ -33,6 +33,12 @@ describe User do
       user.valid?
       expect(user.errors[:password]).to include("can't be blank")
     end
+    
+    it "password_confirmationがない場合は登録できないこと" do
+      user = build(:user, password_confirmation:"")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+    end
 
 
   end
