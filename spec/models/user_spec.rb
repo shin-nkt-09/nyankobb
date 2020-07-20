@@ -28,6 +28,11 @@ describe User do
       expect(another_user.errors[:email]).to include("has already been taken")
     end
 
+    it "passwordがない場合は登録できないこと" do
+      user = build(:user, password:"")
+      user.valid?
+      expect(user.errors[:password]).to include("can't be blank")
+    end
 
 
   end
