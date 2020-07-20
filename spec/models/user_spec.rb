@@ -40,6 +40,12 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
 
+    it "passwordが7文字以上であれば登録ができること" do
+      user = build(:user, password: "shinnkt", password_confirmation: "shinnkt")
+      user.valid?
+      expect(user).to be_valid
+     end
+
 
   end
 end
