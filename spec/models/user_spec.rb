@@ -17,6 +17,12 @@ describe User do
       user = build(:user, nickname:"shinsh")
       expect(user).to be_valid
     end
+    
+    it " nicknameが7文字以上であれば登録できないこと" do
+      user = build(:user, nickname: "aaaaaaa")
+      user.valid?
+      expect(user.errors[:nickname]).to include("is too long (maximum is 6 characters)")
+    end
 
     it "emailがない場合は登録ができないこと" do
       user = build(:user, email: "")
