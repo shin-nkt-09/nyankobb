@@ -7,13 +7,16 @@ describe User do
       expect(user).to be_valid
     end
 
-
     it "nicknameがない場合は登録できないこと" do
       user = build(:user, nickname: nil)
       user.valid?
       expect(user.errors[:nickname]).to include("can't be blank")
      end
 
+    it "nicknameが6文字以下であれば登録できること" do
+      user = build(:user, nickname:"shinsh")
+      expect(user).to be_valid
+    end
 
     it "emailがない場合は登録ができないこと" do
       user = build(:user, email: "")
@@ -42,7 +45,6 @@ describe User do
 
     it "passwordが7文字以上であれば登録ができること" do
       user = build(:user, password: "shinnkt", password_confirmation: "shinnkt")
-      user.valid?
       expect(user).to be_valid
      end
 
